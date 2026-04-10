@@ -1,6 +1,6 @@
 // ╔══════════════════════════════════════════════════════════╗
 // ║  Live SIR Cases – Bookmarklet                          ║
-// ║  Version : 1.5.0                                        ║
+// ║  Version : 1.6.0                                        ║
 // ║  Released: 2026-04-10                                   ║
 // ╚══════════════════════════════════════════════════════════╝
 javascript: (function () {
@@ -362,7 +362,7 @@ javascript: (function () {
   }
 
   // ─── INIT ─────────────────────────────────────────────────────────────────
-  var sirStages = ["Draft", "Analysis", "Contain", "Eradicate", "Recover"];
+  var sirStages = ["Analysis", "Contain", "Eradicate", "Recover"];
 
   var initTries = 0;
   var wait = setInterval(function () {
@@ -377,7 +377,7 @@ javascript: (function () {
 
         setTimeout(function () {
           check("Status", "Open");
-          checkOnly("Case Stages", sirStages);                                          // Draft → Recover only
+          checkOnly("Case Stages", sirStages);                                          // Analysis → Recover only
           checkAll("Environments", ["Default Environment", "CP Development", "Brand Protection"]); // exclude these three
           searchUser("@L1");
 
